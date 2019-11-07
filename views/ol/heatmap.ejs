@@ -1,0 +1,61 @@
+<% layout('layout') -%>
+<% block('head').append('<link rel="stylesheet" href="/stylesheets/ol.css"/>') %>
+<div class="container py-3">
+  <div id="map" class="map"></div>
+  <form>
+    <div class="form-group">
+      <label for="radius">半径サイズ</label>
+      <input id="radius" type="range" min="1" max="50" step="1" value="5" class="form-control"/>
+    </div>
+    <div class-"form-group">
+      <label for="blur">ぼかしサイズ</label>
+      <input id="blur" type="range" min="1" max="50" step="1" value="15" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="status">ステータス選択</label>
+      <select id="status" class="form-control mw-200">
+        <option value="">表示する事例を選択</option>
+        <option value="1">type 1</option>
+        <option value="2">type 2</option>
+        <option value="3">type 3</option>
+        <option value="4">type 4</option>
+        <option value="5">type 5</option>
+        <option value="6">type 6</option>
+        <option value="7">type 7</option>
+        <option value="8">type 8</option>
+        <option value="9">type 9</option>
+        <option value="10">type 10</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="tile">タイル選択</label>
+      <select id="tile" class="form-control mw-200">
+        <option value="Stamen">Stamen</option>
+        <option value="OSM">Open Street Map</option>
+      </select>
+    </div>
+    <label>ページサイズ</label>
+    <select class="my-form-control" id="format">
+      <option value="a0">A0 (slow)</option>
+      <option value="a1">A1</option>
+      <option value="a2">A2</option>
+      <option value="a3">A3</option>
+      <option value="a4" selected>A4</option>
+      <option value="a5">A5 (fast)</option>
+    </select>
+    <label>解像度</label>
+    <select class="my-form-control" id="resolution">
+      <option value="72">72 dpi (fast)</option>
+      <option value="150">150 dpi</option>
+      <option value="300">300 dpi</option>
+    </select>
+  </form>
+  <div class="py-2">
+    <button id="exportPdf">Export PDF</button>
+  </div>
+</div>
+<%
+  block("footer").append("<script src='/js/jspdf.min.js'></script>");
+  block("footer").append("<script src='/javascripts/ol.js'></script>");
+  block("footer").append("<script src='/javascripts/heatmap.js'></script>");
+%>

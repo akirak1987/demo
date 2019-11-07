@@ -1,0 +1,29 @@
+.white-box{
+  background:#fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: inline-block;
+  width: 100%;
+  padding: 50px;
+}
+
+.about-info {
+  text-align: center;
+}
+
+.about-info h2 {
+  font-size: 36px;
+  color: #323232;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.about-info .designation {
+  color: #989898;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+.avatar img {
+  margin-bottom: 60px;
+}

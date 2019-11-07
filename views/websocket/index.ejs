@@ -1,0 +1,29 @@
+<% layout('layout') -%>
+<% block('head').append('<link rel="stylesheet" href="/stylesheets/introduction.css"/>') %>
+<div class="headline">
+  <div class="headline-inner">
+    <img class="headline-bg" src="/images/demo2.jpg">
+    <div class="container">
+      <div class="headline-caption">
+        <h1>WebSocket</h1>
+        <p><a class="btn btn-lg btn-primary" href="/demo2/websocket" role="button">デモ画面</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="white-box">
+    <div class="about-info">
+      <h2>WebSocket</h2>
+      <div class="avatar">
+        <img src="/images/outline2.jpg">
+      </div>
+      <p>イベント会場に於ける搬入車両活動記録取得用webアプリケーション開発。<br>サーバ選定から開発、運用まで全ての工程を担当。</p>
+      <p>実際のアプリケーションはajaxでポーリングする形で実装したが、サーバの負荷や安定性に課題が残ったため<br>今回のデモに関してはWebSocketを利用して安定性の向上や負荷軽減を図っている。</p>
+      <p>複数タブを開いたり、PCとスマートフォンの同時接続等でご検証下さい。</p>
+      <p><a class="btn btn-primary" href="/demo2/websocket" role="button">デモ画面</a></p>
+      <p>使用技術等：PHP, JavaScript, MySQL, AWS EC2, AWS RDS等</p>
+    </div>
+  </div>
+</div>
+

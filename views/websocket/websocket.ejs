@@ -1,0 +1,38 @@
+<% layout('layout') -%>
+<% block('head').append('<link rel="stylesheet" href="/stylesheets/websocket.css"/>'); %>
+<div class="container py-3">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">通過時刻</th>
+        <th scope="col">RFID</th>
+        <th scope="col">リーダー</th>
+        <th scope="col">サイズ</th>
+      <tr>
+    </thead>
+    <tbody id="recordTable">
+      <% for(let record of JSON.parse(records)){ %>
+        <tr id="row<%- record.id %>">
+          <td><%- record.id %></td>
+          <td data-label="通過時刻"><%- new Date(record.settime).toLocaleString('ja-JP',{hour12: false}) %></td>
+          <td data-label="RFID"><%- record.tag %></td>
+          <td data-label="リーダー"><%- record.reader %></td>
+          <td data-label="サイズ">
+            <div class="btn-group btn-group-sm">
+              <button class="btn btn-outline-secondary kicker" name="<%- record.id %>" type="button" value="1">大型</button>
+              <button class="btn btn-outline-secondary kicker" name="<%- record.id %>" type="button" value="2">中型</button>
+              <button class="btn btn-outline-secondary kicker" name="<%- record.id %>"type="button" value="3">小型</button>
+            </div>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+<%
+  block("footer").append("<script src='/js/socket.io.js'></script>");
+  block("footer").append("<script src='/js/moment.js'></script>");
+  block("footer").append("<script src='/javascripts/websocket.js'></script>");
+%>
+

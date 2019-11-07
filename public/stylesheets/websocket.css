@@ -1,0 +1,31 @@
+table.table td:first-child{
+  background: #e9ecef;
+}
+@media screen and (max-width: 768px){
+  .table {
+    width: 100%;
+  }
+  .table .thead-dark {
+    display:none;
+  }
+  .table tr{
+    width: 100%;
+  }
+  .table td{
+    display:block;
+    text-align: right;
+    width: 100%;
+  }
+  table.table td:first-child{
+    background: #343a40;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+  }
+  .table td:before{
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+}

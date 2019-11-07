@@ -1,0 +1,29 @@
+<% layout('layout') -%>
+<% block('head').append('<link rel="stylesheet" href="/stylesheets/introduction.css"/>') %>
+<div class="headline">
+  <div class="headline-inner">
+    <img class="headline-bg" src="/images/demo1.jpg">
+    <div class="container">
+      <div class="headline-caption">
+        <h1>HeatMap</h1>
+        <p><a class="btn btn-lg btn-primary" href="/demo1/heatmap" role="button">デモ画面</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="white-box">
+    <div class="about-info">
+      <h2>heatmap</h2>
+      <div class="avatar">
+        <img src="/images/outline1.jpg">
+      </div>
+      <p>ユーザが落石等、道路の異常を通報するためのアプリ開発。<br>管理画面やアプリから情報を登録するサーバサイドを担当。</p>
+      <p>DB内通報レコードからヒートマップを作成する機能をデモとして作成。</p>
+      <p><a class="btn btn-primary" href="/demo1/heatmap" role="button">デモ画面</a></p>
+      <p>使用技術: PHP, Laravel, OpenLayers, AWS SNS等</p>
+      <p>実際のアプリの紹介ページは<a href="https://patorepo-shimane.org" target="_blank">こちら</a></p>
+    </div>
+  </div>
+</div>
+

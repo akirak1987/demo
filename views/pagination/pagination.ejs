@@ -1,0 +1,89 @@
+<% layout('layout'); -%>
+<% block('head').append('<link rel="stylesheet" href="/stylesheets/pagination.css"/>'); %>
+<div class="py-5 jumbotron bg-light">
+  <div class="container">
+    <h1 class="jumbotron-heading">団体検索</h1>
+    <p class="lead text-muted" id="lastUpdated"></p>
+    <form class="">
+      <div class="form-group">
+        <label for="municipality">市町村選択</label>
+        <select class="form-control mw-200" name="municipality" id="municipality">
+          <option value="">市町村を選択</option>
+          <% munis.forEach(function(municipality){ %>
+            <option value="東京都<%= municipality %>区">東京都<%= municipality %>区</option>
+          <% }); %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="freeWord">フリーワード</label>
+        <input type="text" class="form-control" name="freeWord" id="freeWord" placeholder="検索したい語句を入力">
+      </div>
+      <button type="submit" class="search-action" name="action" value="search">検索実行</button>
+    </form>
+  </div>
+</div>
+<div class="album py-5 bg-light">
+  <div class="container" id="groupList">
+    <div class="row list-header">
+      <span class="list-title">団体一覧</span>
+      <span class="count-display">
+        <span id="hitCount">000件</span>／全<span id="fullCount">000</span>件
+      </span>
+    </div>
+    <div class="row pager"></div>
+    <div class="result-display row"></div>
+    <div class="row pager"></div>
+  </div>
+</div>
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detailModalLabel">団体情報</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <img class="modal-image" id="groupImage" src="/images/image7.jpg" alt="">
+          </div>
+          <div class="row">
+            <h3 id="groupName"></h3>
+          </div>
+          <div class="row">
+            <table class="detail-info">
+              <tbody>
+                <tr>
+                  <th>代表者名</th>
+                  <td id="modalText1"></td>
+                </tr>
+                <tr>
+                  <th>所在地</th>
+                  <td id="modalText2"></td>
+                </tr>
+                <tr>
+                  <th>連絡先</th>
+                  <td id="modalText3"></td>
+                </tr>
+                <tr>
+                  <th>概要</th>
+                  <td id="modalText4"></td>
+                </tr>
+                <tr>
+                  <th>助成金額</th>
+                  <td id="modalText5"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>
+<% block('footer').append('<script src="/javascripts/pagination.js"></script>'); %>
